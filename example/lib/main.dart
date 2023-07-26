@@ -11,8 +11,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final String apiKey = 'ufnRq7uKHnxi2Mhece74Hhlgj';
-  final String apiSecretKey = 'nN4DiSEtMldas9DZitCmVU0S1jz7ofT5FHbIzlQMyVimKlaHNj';
+  final String apiKey = 'S9GzajUq5r5V4VIvT0V0M1HrP';
+  final String apiSecretKey = 'U6NhHZxqRahi2StQYLz6mVhMZEow1HsaZ6igkNgJa47dfQ4fhI';
 
   @override
   Widget build(BuildContext context) {
@@ -23,41 +23,41 @@ class _MyAppState extends State<MyApp> {
           title: const Text('twitter_login example app'),
         ),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: ListView(
             children: [
-              SizedBox(height: 24),
-              Text(
+              const SizedBox(height: 24),
+              const Text(
                 'Twitter API v1.1 is not available when creating a new application in twitter developer from November 15, 2021.\n'
                 'Check the Twitter Developer to see if it supports v1.1 or v2.',
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Image.asset(
                 'assets/twitter_dashboard.png',
                 width: double.infinity,
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Center(
                 child: TextButton(
-                  child: Text('use Twitter API v1.1'),
+                  child: const Text('use Twitter API v1.1'),
                   style: ButtonStyle(
                     foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),
-                    minimumSize: MaterialStateProperty.all<Size>(Size(160, 48)),
+                    minimumSize: MaterialStateProperty.all<Size>(const Size(160, 48)),
                   ),
                   onPressed: () async {
                     await login();
                   },
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Center(
                 child: TextButton(
-                  child: Text('use Twitter API v2.0'),
+                  child: const Text('use Twitter API v2.0'),
                   style: ButtonStyle(
                     foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),
-                    minimumSize: MaterialStateProperty.all<Size>(Size(160, 48)),
+                    minimumSize: MaterialStateProperty.all<Size>(const Size(160, 48)),
                   ),
                   onPressed: () async {
                     await loginV2();

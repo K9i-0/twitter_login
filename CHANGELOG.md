@@ -136,3 +136,16 @@
 ## 4.3.1
 
 * change Kotlin version 1.4.32 to 1.6.10
+
+## 4.3.2
+
+* The login process will no longer fail when the API limits or rate limits are reached.
+
+## 4.4.0
+
+* Update dependency constraints to sdk: '>=2.14.0 <4.0.0' [#122](https://github.com/0maru/twitter_login/issues/122)
+
+## 4.4.1
+
+* Change http version 0.13.3 to 1.0.0
+* Change flutter version 1.25.0-8.1.pre to 3.3.0
