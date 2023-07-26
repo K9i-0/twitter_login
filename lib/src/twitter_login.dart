@@ -313,9 +313,9 @@ class TwitterLogin {
       );
     } on Exception {
       throw PlatformException(
-        code: "400",
-        message: "Failed to generate request token.",
-        details: "Please check your APIKey or APISecret.",
+        code: '400',
+        message: 'Failed to generate request token.',
+        details: 'Please check your APIKey or APISecret.',
       );
     }
 
@@ -330,7 +330,7 @@ class TwitterLogin {
           if (!completer.isCompleted) {
             completer.complete(data['url']?.toString());
           } else {
-            throw CanceledByUserException();
+            throw const CanceledByUserException();
           }
         }
       });
@@ -361,7 +361,7 @@ class TwitterLogin {
           );
         }
         resultURI = await completer.future;
-        subscribe.cancel();
+        await subscribe.cancel();
       } else {
         throw PlatformException(
           code: '100',
@@ -371,7 +371,7 @@ class TwitterLogin {
 
       // The user closed the browser.
       if (resultURI?.isEmpty ?? true) {
-        throw CanceledByUserException();
+        throw const CanceledByUserException();
       }
 
       final queries = Uri.splitQueryString(Uri.parse(resultURI!).query);
@@ -381,7 +381,7 @@ class TwitterLogin {
 
       // The user cancelled the login flow.
       if (queries['denied'] != null) {
-        throw CanceledByUserException();
+        throw const CanceledByUserException();
       }
 
       final token = await AccessToken.getAccessToken(
